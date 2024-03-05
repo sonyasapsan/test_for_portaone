@@ -15,7 +15,6 @@ import java.util.List;
 public class Main {
     private static final String fileName = "src/main/resources/10m.txt";
     public static void main(String[] args) {
-        System.out.println(LocalTime.now());
         FileReader fileReader = new FileReaderImpl();
         DataParser dataParser = new DataParserImpl();
         List<String> lines = fileReader.readDataFromFile(fileName);
@@ -31,6 +30,5 @@ public class Main {
                 dataParser.parseIntegersToString(valueService.findNegativeSequence(numbers)));
         FileWriter fileWriter = new FileWriterImpl();
         fileWriter.writeDataToTheFile("src/main/resources/result.txt", result);
-        System.out.println(LocalTime.now());
     }
 }
